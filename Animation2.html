@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animation 2</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body{
+            background-color: #FF5722  ;
+        }
+        .loader{
+            width: 100px;
+            height: 100px;
+            position: absolute;
+            top: 50%;
+            left:50%;
+            transform: translateX(-50%) translateY(-50%);
+        }
+        .loader-ring{
+            display: inline-block;
+            position: relative;
+            width: 75px;
+            height:75px;
+        }
+        .loader-ring div{
+            box-sizing: border-box;
+            display: block;
+            position: absolute;
+            width:70px;
+            height:70px;
+            border:6px solid #ffffffff;
+            border-radius: 100%;
+            border-color: #ffffffff transparent transparent transparent;
+            animation: spin 1s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+        }
+        .loader-ring div:nth-child(1){
+            animation-delay: -0.45s;
+        }
+        .loader-ring div:nth-child(2){
+            animation-delay: -0.3s;
+        }
+        .loader-ring div:nth-child(3){
+            animation-delay: -0.15s;
+        }
+        @keyframes spin{
+            0%{
+                transform: rotate(0deg);
+            }
+            100%{
+                transform: rotate(360deg);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="link">
+        Choose Animations :
+        <select name="choose" onchange="window.location.href=this.value;">
+            <option value="Animation1.html">Animation 1</option>
+            <option value="Animation2.html" selected>Animation 2</option>
+            <option value="Animation3.html">Animation 3</option>
+            <option value="Animation4.html">Animation 4</option>
+            <option value="Animation5.html">Animation 5</option>
+        </select>
+    </div>
+    <div class="loader">
+        <div class="loader-ring">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+</body>
+</html>

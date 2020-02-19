@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animation 4</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body{
+            background-color: #3949AB ;
+        }
+        .loader{
+            width: 70px;
+            height: 70px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translateX(-50%) translateY(-50%);
+            background-color: #ffffff;
+            animation: load 1.2s ease-in-out infinite;
+        }
+        
+        @keyframes load{
+            0%{
+                transform: perspective(120px) rotateX(0deg) rotateY(0deg);
+            }
+            50%{
+                transform: perspective(120px) rotateX(-180deg) rotateY(0deg);
+            }
+            100%{
+                transform: perspective(120px) rotateX(-180deg) rotateY(-180deg);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="link">
+        Choose Animations :
+        <select name="choose" onchange="window.location.href=this.value;">
+            <option value="Animation1.html">Animation 1</option>
+            <option value="Animation2.html">Animation 2</option>
+            <option value="Animation3.html">Animation 3</option>
+            <option value="Animation4.html">Animation 4</option>
+            <option value="Animation5.html" selected>Animation 5</option>
+        </select>
+    </div>
+    <div class="loader">
+    </div>
+</body>
+</html>
